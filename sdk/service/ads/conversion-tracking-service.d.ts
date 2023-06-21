@@ -27,6 +27,7 @@ export declare namespace google.ads.integration.service.ads {
       conversionTrackingId?: string;
     }
   }
+
   export declare namespace google.ads.integration.service.ads {
     /**
      * Service called by the partner to finish the conversion tracking setup.
