@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 export declare namespace google.ads.integration.service.partner {
+  /**
+   * Generic error severity type for all xchannel error fixing
+   * methods.
+   */
+  export const enum ErrorSeverity {
+    UNSPECIFIED = 'UNSPECIFIED',
     /**
-     * Generic error severity type for all xchannel error fixing
-     * methods.
+     * This enum value means the error will prevent Ads App from
+     * rendering.
      */
-    export const enum ErrorSeverity {
-      UNSPECIFIED = 'UNSPECIFIED',
-      /**
-       * This enum value means the error will prevent Ads App from
-       * rendering.
-       */
-      FATAL = 'FATAL',
-      /**
-       * This enum value means the error will not prevent Ads App
-       * from rendering.
-       */
-      WARNING = 'WARNING',
-    }
+    FATAL = 'FATAL',
+    /**
+     * This enum value means the error will not prevent Ads App
+     * from rendering.
+     */
+    WARNING = 'WARNING',
   }
+}

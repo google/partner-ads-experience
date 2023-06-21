@@ -14,47 +14,47 @@
  * limitations under the License.
  */
 export declare namespace google.ads.integration.service.partner {
-    export interface GetConversionLabelsRequest {}
-  }
-  export declare namespace google.ads.integration.service.partner {
-    export interface GetConversionLabelsResponse {
-      /**
-       * The list of conversion goal labels supported by the partner.
-       *
-       * The list of conversion goal labels would be pre-defined
-       * between Google Ads and the partner.
-       * The full list of conversion goal labels are:
-       * - purchase
-       * - subscribe
-       * - add_to_cart
-       * - begin_checkout
-       * - book_appointment
-       * - contact
-       * - request_quote
-       * - phone_call_leads
-       * - get_directions
-       * - submit_lead_form
-       * - sign_up
-       *
-       */
-      conversionLabels?: Array<string>;
-    }
-  }
-  export declare namespace google.ads.integration.service.partner {
+  export interface GetConversionLabelsRequest {}
+}
+export declare namespace google.ads.integration.service.partner {
+  export interface GetConversionLabelsResponse {
     /**
-     * Service called by the Ads app to power conversion
-     * tracking setup.
+     * The list of conversion goal labels supported by the partner.
      *
-     * This service is provided by the partner.
+     * The list of conversion goal labels would be pre-defined
+     * between Google Ads and the partner.
+     * The full list of conversion goal labels are:
+     * - purchase
+     * - subscribe
+     * - add_to_cart
+     * - begin_checkout
+     * - book_appointment
+     * - contact
+     * - request_quote
+     * - phone_call_leads
+     * - get_directions
+     * - submit_lead_form
+     * - sign_up
+     *
      */
-    export interface ConversionTrackingService {
-      /**
-       * Gets a list of supported conversion goal labels supported by
-       * the partner.
-       */
-      getSupportedConversionLabels(request: google.ads.integration.service.partner
-                                       .GetConversionLabelsRequest):
-          Promise<
-              google.ads.integration.service.partner.GetConversionLabelsResponse>;
-    }
+    conversionLabels?: Array<string>;
   }
+}
+export declare namespace google.ads.integration.service.partner {
+  /**
+   * Service called by the Ads app to power conversion
+   * tracking setup.
+   *
+   * This service is provided by the partner.
+   */
+  export interface ConversionTrackingService {
+    /**
+     * Gets a list of supported conversion goal labels supported by
+     * the partner.
+     */
+    getSupportedConversionLabels(request: google.ads.integration.service.partner
+                                     .GetConversionLabelsRequest):
+        Promise<
+            google.ads.integration.service.partner.GetConversionLabelsResponse>;
+  }
+}

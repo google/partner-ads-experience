@@ -15,29 +15,30 @@
  */
 export declare namespace google.ads.integration.service.ads {
     export interface GetConversionTrackingIdRequest {}
-  }
-  export declare namespace google.ads.integration.service.ads {
-    export interface GetConversionTrackingIdResponse {
-      /**
-       * Conversion tracking id with the format like 'AW-XXXXXXXXX'
-       *
-       * The partner attaches this id in the gTag installed on the
-       * website.
-       */
-      conversionTrackingId?: string;
-    }
-  }
+}
 
-  export declare namespace google.ads.integration.service.ads {
+export declare namespace google.ads.integration.service.ads {
+  export interface GetConversionTrackingIdResponse {
     /**
-     * Service called by the partner to finish the conversion tracking setup.
+     * Conversion tracking id with the format like 'AW-XXXXXXXXX'
      *
-     * This service is provided by the Ads app.
+     * The partner attaches this id in the gTag installed on the
+     * website.
      */
-    export interface ConversionTrackingIdService {
-      getConversionTrackingId(request: google.ads.integration.service.ads
-                                  .GetConversionTrackingIdRequest):
-          Promise<
-              google.ads.integration.service.ads.GetConversionTrackingIdResponse>;
-    }
+    conversionTrackingId?: string;
   }
+}
+
+export declare namespace google.ads.integration.service.ads {
+  /**
+   * Service called by the partner to finish the conversion tracking setup.
+   *
+   * This service is provided by the Ads app.
+   */
+  export interface ConversionTrackingIdService {
+    getConversionTrackingId(request: google.ads.integration.service.ads
+                                .GetConversionTrackingIdRequest):
+        Promise<
+            google.ads.integration.service.ads.GetConversionTrackingIdResponse>;
+  }
+}

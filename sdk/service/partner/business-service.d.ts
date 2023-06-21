@@ -14,101 +14,102 @@
  * limitations under the License.
  */
 export declare namespace google.ads.integration.service.partner {
-    export interface GetBusinessInfoRequest {}
+  export interface GetBusinessInfoRequest {}
+}
+export declare namespace google.ads.integration.service.partner {
+  export interface GetBusinessInfoResponse {
+    businessName?: string;
+    businessUrl?: string;
   }
-  export declare namespace google.ads.integration.service.partner {
-    export interface GetBusinessInfoResponse {
-      businessName?: string;
-      businessUrl?: string;
-    }
-  }
-  export declare namespace google.ads.integration.service.partner {
-    export interface FixBusinessInfoRequest {
-      /**
-       * Error severity for partner to make decisions.
-       */
-      errorSeverity?: google.ads.integration.service.partner.ErrorSeverity;
-      /**
-       * Business info specific error type for partner to understand
-       * the error.
-       */
-      errorType?: google.ads.integration.service.partner.BusinessInfoErrorType;
-      /**
-       * Detailed error message for partner to log.
-       */
-      errorMessage?: string;
-    }
-  }
-  export declare namespace google.ads.integration.service.partner {
-    export interface FixBusinessInfoResponse {
-      /**
-       * Whether or not the partner is ready for Ads app to do a retry.
-       */
-      retryReady?: boolean;
-    }
-  }
-  export declare namespace google.ads.integration.service.partner {
+}
+export declare namespace google.ads.integration.service.partner {
+  export interface FixBusinessInfoRequest {
     /**
-     * Generic error severity type for all xchannel error fixing
-     * methods.
+     * Error severity for partner to make decisions.
      */
-    export const enum ErrorSeverity {
-      UNSPECIFIED = 'UNSPECIFIED',
-      /**
-       * This enum value means the error will prevent Ads App from
-       * rendering.
-       */
-      FATAL = 'FATAL',
-      /**
-       * This enum value means the error will not prevent Ads App
-       * from rendering.
-       */
-      WARNING = 'WARNING',
-    }
-  }
-  export declare namespace google.ads.integration.service.partner {
+    errorSeverity?: google.ads.integration.service.partner.ErrorSeverity;
     /**
-     * Business info specific error type.
+     * Business info specific error type for partner to understand
+     * the error.
      */
-    export const enum BusinessInfoErrorType {
-      /**
-       * Business url has unknown errors.
-       */
-      URL_UNKNOWN_ERROR = 'URL_UNKNOWN_ERROR',
-      /**
-       * Business url could be empty, exceeding maximum allowable
-       * length(512), or syntactically invalid.
-       */
-      URL_SYNTAX_ERROR = 'URL_SYNTAX_ERROR',
-      /**
-       * Business url is unreachable because it is not found,
-       * unauthenticated, has too many redirects or a bad redirect.
-       */
-      URL_UNREACHABLE = 'URL_UNREACHABLE',
-      /**
-       * Business url is blocklisted by Google Ads to advertise.
-       */
-      URL_INELIGIBLE = 'URL_INELIGIBLE',
-    }
-  }
-  export declare namespace google.ads.integration.service.partner {
+    errorType?: google.ads.integration.service.partner.BusinessInfoErrorType;
     /**
-     * Service called by the Ads app to get business info from
+     * Detailed error message for partner to log.
+     */
+    errorMessage?: string;
+  }
+}
+export declare namespace google.ads.integration.service.partner {
+  export interface FixBusinessInfoResponse {
+    /**
+     * Whether or not the partner is ready for Ads app to do a retry.
+     */
+    retryReady?: boolean;
+  }
+}
+export declare namespace google.ads.integration.service.partner {
+  /**
+   * Generic error severity type for all xchannel error fixing
+   * methods.
+   */
+  export const enum ErrorSeverity {
+    UNSPECIFIED = 'UNSPECIFIED',
+    /**
+     * This enum value means the error will prevent Ads App from
+     * rendering.
+     */
+    FATAL = 'FATAL',
+    /**
+     * This enum value means the error will not prevent Ads App
+     * from rendering.
+     */
+    WARNING = 'WARNING',
+  }
+}
+export declare namespace google.ads.integration.service.partner {
+  /**
+   * Business info specific error type.
+   */
+  export const enum BusinessInfoErrorType {
+    /**
+     * Business url has unknown errors.
+     */
+    URL_UNKNOWN_ERROR = 'URL_UNKNOWN_ERROR',
+    /**
+     * Business url could be empty, exceeding maximum allowable
+     * length(512), or syntactically invalid.
+     */
+    URL_SYNTAX_ERROR = 'URL_SYNTAX_ERROR',
+    /**
+     * Business url is unreachable because it is not found,
+     * unauthenticated, has too many redirects or a bad redirect.
+     */
+    URL_UNREACHABLE = 'URL_UNREACHABLE',
+    /**
+     * Business url is blocklisted by Google Ads to advertise.
+     */
+    URL_INELIGIBLE = 'URL_INELIGIBLE',
+  }
+}
+export declare namespace google.ads.integration.service.partner {
+  /**
+   * Service called by the Ads app to get business info from
+   * the partner.
+   */
+  export interface BusinessService {
+    /**
+     * Gets business info to be used in ads campaign construction.
+     */
+    getBusinessInfo(
+        request: google.ads.integration.service.partner.GetBusinessInfoRequest):
+        Promise<google.ads.integration.service.partner.GetBusinessInfoResponse>;
+    /**
+     * Fix the invalid business info fields that Ads app got from
      * the partner.
      */
-    export interface BusinessService {
-      /**
-       * Gets business info to be used in ads campaign construction.
-       */
-      getBusinessInfo(
-          request: google.ads.integration.service.partner.GetBusinessInfoRequest):
-          Promise<google.ads.integration.service.partner.GetBusinessInfoResponse>;
-      /**
-       * Fix the invalid business info fields that Ads app got from
-       * the partner.
-       */
-      fixBusinessInfo(
-          request: google.ads.integration.service.partner.FixBusinessInfoRequest):
-          Promise<google.ads.integration.service.partner.FixBusinessInfoResponse>;
-    }
+    fixBusinessInfo(
+        request: google.ads.integration.service.partner.FixBusinessInfoRequest):
+        Promise<google.ads.integration.service.partner.FixBusinessInfoResponse>;
   }
+}
+

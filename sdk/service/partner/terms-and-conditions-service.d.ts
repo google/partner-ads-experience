@@ -14,27 +14,27 @@
  * limitations under the License.
  */
 export declare namespace google.ads.integration.service.partner {
-    export interface NotifyRequest {
-      /**
-       * Whether the user has accepted the term of condition.
-       */
-      isAccepted?: boolean;
-    }
-  }
-  export declare namespace google.ads.integration.service.partner {
-    export interface NotifyResponse {}
-  }
-  export declare namespace google.ads.integration.service.partner {
+  export interface NotifyRequest {
     /**
-     * Service called by the Ads app to notify partner whether the
-     * user has accepted terms and conditions.
+     * Whether the user has accepted the term of condition.
      */
-    export interface TermsAndConditionsService {
-      /**
-       * Notify partner whether the user has accepted terms and
-       * conditions.
-       */
-      notify(request: google.ads.integration.service.partner.NotifyRequest):
-          Promise<google.ads.integration.service.partner.NotifyResponse>;
-    }
+    isAccepted?: boolean;
   }
+}
+export declare namespace google.ads.integration.service.partner {
+  export interface NotifyResponse {}
+}
+export declare namespace google.ads.integration.service.partner {
+  /**
+   * Service called by the Ads app to notify partner whether the
+   * user has accepted terms and conditions.
+   */
+  export interface TermsAndConditionsService {
+    /**
+     * Notify partner whether the user has accepted terms and
+     * conditions.
+     */
+    notify(request: google.ads.integration.service.partner.NotifyRequest):
+        Promise<google.ads.integration.service.partner.NotifyResponse>;
+  }
+}
