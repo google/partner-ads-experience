@@ -21,12 +21,6 @@ process.
 
 **Note:** The following code assumes that you develop with Javascript.
 
-Make a local copy of the repo
-
-```
-git clone https://partner-code.googlesource.com/embedded-ads/partner-ads-experience
-```
-
 ### Config setup
 ```js
 let paxConfig = {
