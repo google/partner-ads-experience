@@ -4,4 +4,4 @@
 
 ## Version 0.2.0
 * Added accountService as part of SupportedServicesFromAds interface.
-* Provided default fix service implementation to avoid the failures when these services are not provided.
+* Provided default fix service implementations to avoid the failures when fix services are not provided.
