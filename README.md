@@ -134,6 +134,13 @@ const ctService = adsSupportedServices.conversionTrackingService;
 const conversionTrackingId = (await ctService.getConversionTrackingId(${get_conversion_tracking_id_request})).conversionTrackingId;
 ```
 
+#### Get terms and conditions state from the Ads app
+
+```js
+const accountService = adsSupportedServices.accountService;
+const termsAndServicesIsAccepted = (await
+accountService.getTermsAndConditionsState(${get_terms_and_conditions_state_request})).isAccepted;
+```
 ## Contributing guidelines
 
 Currently the GitHub repository is owned by Google Partner Ads Experience dev
