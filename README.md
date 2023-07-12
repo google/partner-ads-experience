@@ -107,7 +107,7 @@ let paxServices = {
 ```js
 // Insert the script with integrator js file from Google gstatic.com.
 let sc = document.createElement('script');
-sc.src = 'https://www.gstatic.com/pax/jimdo/dev/pax_integrator.js';
+sc.src = 'https://www.gstatic.com/pax/${version}/pax_integrator.js';
 document.body.append(sc);
 
 // Create an element to launch the Ads app.
