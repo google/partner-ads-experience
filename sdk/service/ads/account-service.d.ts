@@ -16,31 +16,30 @@
 
 
 export declare namespace google.ads.integration.service.ads {
-  export interface GetConversionTrackingIdRequest {}
+  export interface GetTermsAndConditionsStateRequest {}
 }
 export declare namespace google.ads.integration.service.ads {
-  export interface GetConversionTrackingIdResponse {
+  export interface GetTermsAndConditionsStateResponse {
     /**
-     * Conversion tracking id with the format like 'AW-XXXXXXXXX'
-     *
-     * The partner attaches this id in the gTag installed on the
-     * website.
+     * Whether the user has accepted the ads terms and conditions.
      */
-    conversionTrackingId?: string;
+    isAccepted?: boolean;
   }
 }
 
 
 export declare namespace google.ads.integration.service.ads {
   /**
-   * Service called by the partner to finish the conversion tracking setup.
-   *
-   * This service is provided by the Ads app.
+   * Service called by the partner to get info related with the
+   * ads customer account.
    */
-  export interface ConversionTrackingIdService {
-    getConversionTrackingId(request: google.ads.integration.service.ads
-                                .GetConversionTrackingIdRequest):
-        Promise<
-            google.ads.integration.service.ads.GetConversionTrackingIdResponse>;
+  export interface AccountService {
+    /**
+     * Gets whether the user has accepted the terms and conditions.
+     */
+    getTermsAndConditionsState(request: google.ads.integration.service.ads
+                                   .GetTermsAndConditionsStateRequest):
+        Promise<google.ads.integration.service.ads
+                    .GetTermsAndConditionsStateResponse>;
   }
 }
