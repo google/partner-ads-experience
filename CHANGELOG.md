@@ -5,3 +5,6 @@
 ## Version 0.2.0
 * Added accountService as part of SupportedServicesFromAds interface.
 * Provided default fix service implementations to avoid the failures when fix services are not provided.
+
+## Version 0.2.1
+* Add license header for newly added files.
