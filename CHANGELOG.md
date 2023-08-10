@@ -8,3 +8,7 @@
 
 ## Version 0.2.1
 * Add license header for newly added files.
+
+## Version 0.2.2
+* Change integrator to support to create a new ads account for the users
+  who have existing ads accounts.

@@ -19,4 +19,4 @@
  * The dev url to download the PAX integrator runtime.
  */
 export const INTEGRATOR_LIBRARY_DEV_URL =
-    'https://www.gstatic.com/pax/0.2.1/pax_integrator.js';
+    'https://www.gstatic.com/pax/0.2.2/pax_integrator.js';
