@@ -7,8 +7,11 @@
 * Provided default fix service implementations to avoid the failures when fix services are not provided.
 
 ## Version 0.2.1
-* Add license header for newly added files.
+* Added license header for newly added files.
 
 ## Version 0.2.2
-* Change integrator to support to create a new ads account for the users
+* Changed integrator to support to create a new ads account for the users
   who have existing ads accounts.
+
+## Version 0.2.3
+* Changed integrator to support adblock detection.
