@@ -15,3 +15,6 @@
 
 ## Version 0.2.3
 * Changed integrator to support adblock detection.
+
+## Version 0.2.4
+* Changed integrator to support existing ads account detection.
