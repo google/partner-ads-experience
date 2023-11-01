@@ -18,3 +18,6 @@
 
 ## Version 0.2.4
 * Changed integrator to support existing ads account detection.
+
+## Version 0.2.5
+* Changed integrator to support two step authentication.

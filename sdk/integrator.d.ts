@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+// g3-format-clang
 import {google as googleConfig} from 'config/config';
 
 import {google as googleService} from './required_services';

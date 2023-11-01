@@ -54,46 +54,35 @@ export declare namespace google.ads.integration.service.partner {
   /**
    * Generic error severity type for all xchannel error fixing
    * methods.
+   *
+   * - UNSPECIFIED:
+   * - FATAL:
+   *   This enum value means the error will prevent Ads App from
+   *   rendering.
+   * - WARNING:
+   *   This enum value means the error will not prevent Ads App
+   *   from rendering.
    */
-  export const enum ErrorSeverity {
-    UNSPECIFIED = 'UNSPECIFIED',
-    /**
-     * This enum value means the error will prevent Ads App from
-     * rendering.
-     */
-    FATAL = 'FATAL',
-    /**
-     * This enum value means the error will not prevent Ads App
-     * from rendering.
-     */
-    WARNING = 'WARNING',
-  }
+  export type ErrorSeverity =|'UNSPECIFIED'|'FATAL'|'WARNING';
 }
 export declare namespace google.ads.integration.service.partner {
   /**
    * Business info specific error type.
+   *
+   * - URL_UNKNOWN_ERROR:
+   *   Business url has unknown errors.
+   * - URL_SYNTAX_ERROR:
+   *   Business url could be empty, exceeding maximum allowable
+   *   length(512), or syntactically invalid including missing
+   *   'http' or 'https' scheme.
+   * - URL_UNREACHABLE:
+   *   Business url is unreachable because it is not found,
+   *   unauthenticated, has too many redirects or a bad redirect.
+   * - URL_INELIGIBLE:
+   *   Business url is blocklisted by Google Ads to advertise.
    */
-  export const enum BusinessInfoErrorType {
-    /**
-     * Business url has unknown errors.
-     */
-    URL_UNKNOWN_ERROR = 'URL_UNKNOWN_ERROR',
-    /**
-     * Business url could be empty, exceeding maximum allowable
-     * length(512), or syntactically invalid including missing
-     * 'http' or 'https' scheme.
-     */
-    URL_SYNTAX_ERROR = 'URL_SYNTAX_ERROR',
-    /**
-     * Business url is unreachable because it is not found,
-     * unauthenticated, has too many redirects or a bad redirect.
-     */
-    URL_UNREACHABLE = 'URL_UNREACHABLE',
-    /**
-     * Business url is blocklisted by Google Ads to advertise.
-     */
-    URL_INELIGIBLE = 'URL_INELIGIBLE',
-  }
+  export type BusinessInfoErrorType =|'URL_UNKNOWN_ERROR'|'URL_SYNTAX_ERROR'|
+      'URL_UNREACHABLE'|'URL_INELIGIBLE';
 }
 
 export declare namespace google.ads.integration.service.partner {

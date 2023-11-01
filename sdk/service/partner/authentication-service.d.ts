@@ -62,35 +62,28 @@ export declare namespace google.ads.integration.service.partner {
   /**
    * Generic error severity type for all xchannel error fixing
    * methods.
+   *
+   * - UNSPECIFIED:
+   * - FATAL:
+   *   This enum value means the error will prevent Ads App from
+   *   rendering.
+   * - WARNING:
+   *   This enum value means the error will not prevent Ads App
+   *   from rendering.
    */
-  export const enum ErrorSeverity {
-    UNSPECIFIED = 'UNSPECIFIED',
-    /**
-     * This enum value means the error will prevent Ads App from
-     * rendering.
-     */
-    FATAL = 'FATAL',
-    /**
-     * This enum value means the error will not prevent Ads App
-     * from rendering.
-     */
-    WARNING = 'WARNING',
-  }
+  export type ErrorSeverity =|'UNSPECIFIED'|'FATAL'|'WARNING';
 }
 export declare namespace google.ads.integration.service.partner {
   /**
    * Authentication specific error type.
+   *
+   * - AUTH_UNKNOWN_ERROR:
+   *   Authentication has unknown errors.
+   * - AUTH_TOKEN_EXPIRED:
+   *   Access token expired.
    */
-  export const enum AuthenticationErrorType {
-    /**
-     * Authentication has unknown errors.
-     */
-    AUTH_UNKNOWN_ERROR = 'AUTH_UNKNOWN_ERROR',
-    /**
-     * Access token expired.
-     */
-    AUTH_TOKEN_EXPIRED = 'AUTH_TOKEN_EXPIRED',
-  }
+  export type AuthenticationErrorType =
+      |'AUTH_UNKNOWN_ERROR'|'AUTH_TOKEN_EXPIRED';
 }
 
 export declare namespace google.ads.integration.service.partner {

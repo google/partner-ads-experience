@@ -75,9 +75,9 @@ export declare namespace google.ads.integration {
 export declare namespace google.ads.integration {
   /**
    * Environment choices to launch the Ads App.
+   *
+   * - PROD:
+   * - QA_PROD:
    */
-  export const enum Environment {
-    PROD = 'PROD',
-    QA_PROD = 'QA_PROD',
-  }
+  export type Environment =|'PROD'|'QA_PROD';
 }

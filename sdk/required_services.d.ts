@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+// g3-format-clang
 import {google as adsAccount} from 'service/ads/account-service';
 import {google as adsConversionTracking} from 'service/ads/conversion-tracking-service';
 import {google as authentication} from 'service/partner/authentication-service';

@@ -33,7 +33,6 @@ export declare namespace google.ads.integration.service.partner {
      * - book_appointment
      * - contact
      * - request_quote
-     * - phone_call_leads
      * - get_directions
      * - submit_lead_form
      * - sign_up
