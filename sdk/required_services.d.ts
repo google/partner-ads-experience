@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-// g3-format-clang
 import {google as adsAccount} from 'service/ads/account-service';
 import {google as adsConversionTracking} from 'service/ads/conversion-tracking-service';
+import {google as accountStatus} from 'service/partner/account-status-service';
 import {google as authentication} from 'service/partner/authentication-service';
 import {google as business} from 'service/partner/business-service';
 import {google as partnerConversionTracking} from 'service/partner/conversion-tracking-service';
@@ -41,6 +41,9 @@ export declare namespace google.ads.integration.service {
 
     termsAndConditionsService?: partnerTermsAndConditions.ads.integration
         .service.partner.TermsAndConditionsService;
+
+    accountStatusService?:
+        accountStatus.ads.integration.service.partner.AccountStatusService;
   }
 
   /**

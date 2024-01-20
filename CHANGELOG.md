@@ -21,3 +21,6 @@
 
 ## Version 0.2.5
 * Changed integrator to support two step authentication.
+
+## Version 0.2.6
+* Add accountStatusService as part of adsSupportedServices.

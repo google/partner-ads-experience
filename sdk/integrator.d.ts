@@ -1,5 +1,5 @@
 /**
- * Copyright 2023 Google LLC
+ * Copyright 2024 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-// g3-format-clang
 import {google as googleConfig} from 'config/config';
 
 import {google as googleService} from './required_services';
@@ -38,8 +37,8 @@ export declare namespace google.ads.integration {
      */
     launchGoogleAds(
         config?: googleConfig.ads.integration.Config,
-        services?: googleService.ads.integration.service.RequiredServicesByAds):
-        Promise<AdsApp>;
+        services?: googleService.ads.integration.service.RequiredServicesByAds,
+        ): Promise<AdsApp>;
   }
 
   /**

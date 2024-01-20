@@ -91,6 +91,14 @@ let termsAndConditionsService = {
 };
 ```
 
+#### Account status
+
+```js
+let accountStatusService = {
+  disconnect: ${disconnect_impl},
+};
+```
+
 ### Wrap all Ads app required services
 
 ```js
@@ -99,6 +107,7 @@ let paxServices = {
   businessService: businessService,
   conversionTrackingService: conversionTrackingService,
   termsAndConditionsService: termsAndConditionsService,
+  accountStatusService: accountStatusService,
 };
 ```
 

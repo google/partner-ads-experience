@@ -15,19 +15,26 @@
  */
 
 
+export declare namespace google.ads.integration.service.partner {
+  export interface DisconnectRequest {}
+}
+export declare namespace google.ads.integration.service.partner {
+  export interface DisconnectResponse {}
+}
+
 
 export declare namespace google.ads.integration.service.partner {
   /**
-   * Generic error severity type for all xchannel error fixing
-   * methods.
-   *
-   * - UNSPECIFIED:
-   * - FATAL:
-   *   This enum value means the error will prevent Ads App from
-   *   rendering.
-   * - WARNING:
-   *   This enum value means the error will not prevent Ads App
-   *   from rendering.
+   * Service called by the Ads app to notify partner that the
+   * user wants to disconnect their Google Ads account.
    */
-  export type ErrorSeverity =|'UNSPECIFIED'|'FATAL'|'WARNING';
+  export interface AccountStatusService {
+    /**
+     * Notify partner that the user wants to disconnect their
+     * Google Ads account.
+     */
+    disconnect(request:
+                   google.ads.integration.service.partner.DisconnectRequest):
+        Promise<google.ads.integration.service.partner.DisconnectResponse>;
+  }
 }
