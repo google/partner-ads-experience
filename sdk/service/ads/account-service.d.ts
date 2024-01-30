@@ -26,6 +26,17 @@ export declare namespace google.ads.integration.service.ads {
     isAccepted?: boolean;
   }
 }
+export declare namespace google.ads.integration.service.ads {
+  export interface GetAccountIdRequest {}
+}
+export declare namespace google.ads.integration.service.ads {
+  export interface GetAccountIdResponse {
+    /**
+     * The customer id of the ads customer.
+     */
+    customerId?: number;
+  }
+}
 
 
 export declare namespace google.ads.integration.service.ads {
@@ -41,5 +52,11 @@ export declare namespace google.ads.integration.service.ads {
                                    .GetTermsAndConditionsStateRequest):
         Promise<google.ads.integration.service.ads
                     .GetTermsAndConditionsStateResponse>;
+    /**
+     * Gets the account id of the ads customer.
+     */
+    getAccountId(request:
+                     google.ads.integration.service.ads.GetAccountIdRequest):
+        Promise<google.ads.integration.service.ads.GetAccountIdResponse>;
   }
 }

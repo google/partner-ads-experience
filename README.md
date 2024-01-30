@@ -150,6 +150,15 @@ const accountService = adsSupportedServices.accountService;
 const termsAndServicesIsAccepted = (await
 accountService.getTermsAndConditionsState(${get_terms_and_conditions_state_request})).isAccepted;
 ```
+
+#### Get account id from the Ads app
+
+```js
+const accountService = adsSupportedServices.accountService;
+const customerId = (await
+accountService.getAccountId(${get_account_id_request})).customerId;
+```
+
 ## Contributing guidelines
 
 Currently the GitHub repository is owned by Google Partner Ads Experience dev
