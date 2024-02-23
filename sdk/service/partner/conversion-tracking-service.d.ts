@@ -41,6 +41,33 @@ export declare namespace google.ads.integration.service.partner {
     conversionLabels?: Array<string>;
   }
 }
+export declare namespace google.ads.integration.service.partner {
+  export interface GetPageViewConversionSettingRequest {}
+}
+export declare namespace google.ads.integration.service.partner {
+  export interface GetPageViewConversionSettingResponse {
+    /**
+     * Whether to enable page view conversion set up on PAX side.
+     */
+    enablePageViewConversion?: boolean;
+    /**
+     * A list of website pages under the 3P user website domain.
+     */
+    websitePages?: Array<google.ads.integration.service.partner.WebsitePage>;
+  }
+}
+export declare namespace google.ads.integration.service.partner {
+  export interface WebsitePage {
+    /**
+     * The title of the website page.
+     */
+    title?: string;
+    /**
+     * The path of the website page.
+     */
+    path?: string;
+  }
+}
 
 
 export declare namespace google.ads.integration.service.partner {
@@ -59,5 +86,12 @@ export declare namespace google.ads.integration.service.partner {
                                      .GetConversionLabelsRequest):
         Promise<
             google.ads.integration.service.partner.GetConversionLabelsResponse>;
+    /**
+     * Gets the page view conversion setting.
+     */
+    getPageViewConversionSetting(request: google.ads.integration.service.partner
+                                     .GetPageViewConversionSettingRequest):
+        Promise<google.ads.integration.service.partner
+                    .GetPageViewConversionSettingResponse>;
   }
 }

@@ -1,3 +1,9 @@
+## Version 0.2.8
+* Add ConversionTrackingService.getPageViewConversionSetting service
+* Update AccountService.GetAccountId API which is provide more info in
+  GetAccountIdResponse.
+* Integrator change to support linking campaigns with website context.
+
 ## Version 0.2.7
 * Add getAccountId service as part of AccountService.
 

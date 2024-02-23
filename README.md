@@ -71,6 +71,7 @@ let authInfoService = {
 ```js
 let conversionTrackingService = {
   getSupportedConversionLabels: ${get_supported_conversion_labels_impl},
+  getPageViewConversionSetting: ${get_page_view_conversion_setting_impl},
 };
 ```
 
@@ -157,6 +158,10 @@ accountService.getTermsAndConditionsState(${get_terms_and_conditions_state_reque
 const accountService = adsSupportedServices.accountService;
 const customerId = (await
 accountService.getAccountId(${get_account_id_request})).customerId;
+const externalCustomerId =  (await
+accountService.getAccountId(${get_account_id_request})).externalCustomerId;
+const formattedExternalCustomerId =  (await
+accountService.getAccountId(${get_account_id_request})).formattedExternalCustomerId;
 ```
 
 ## Contributing guidelines

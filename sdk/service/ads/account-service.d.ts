@@ -35,6 +35,14 @@ export declare namespace google.ads.integration.service.ads {
      * The customer id of the ads customer.
      */
     customerId?: number;
+    /**
+     * The external customer id of the ads customer.
+     */
+    externalCustomerId?: number;
+    /**
+     * The formatted external customer id of the ads customer.
+     */
+    formattedExternalCustomerId?: string;
   }
 }
 
