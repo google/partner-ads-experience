@@ -1,3 +1,7 @@
+## Versuib 0.2.9
+* Add AccountService.disconnect service.
+* Fix integrator debugging config setup bug.
+
 ## Version 0.2.8
 * Add ConversionTrackingService.getPageViewConversionSetting service
 * Update AccountService.GetAccountId API which is provide more info in

@@ -160,8 +160,15 @@ const customerId = (await
 accountService.getAccountId(${get_account_id_request})).customerId;
 const externalCustomerId =  (await
 accountService.getAccountId(${get_account_id_request})).externalCustomerId;
-const formattedExternalCustomerId =  (await
+const formattedExternalCustomerId = (await
 accountService.getAccountId(${get_account_id_request})).formattedExternalCustomerId;
+```
+
+#### Disconnect the Ads app
+```js
+const accountService = adsSupportedServices.accountService;
+const disconnectIsSuccess = (await
+accountService.disconnect(${disconnect_request})).isSuccess;
 ```
 
 ## Contributing guidelines

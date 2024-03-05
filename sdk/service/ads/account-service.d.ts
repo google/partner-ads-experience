@@ -45,6 +45,17 @@ export declare namespace google.ads.integration.service.ads {
     formattedExternalCustomerId?: string;
   }
 }
+export declare namespace google.ads.integration.service.ads {
+  export interface DisconnectRequest {}
+}
+export declare namespace google.ads.integration.service.ads {
+  export interface DisconnectResponse {
+    /**
+     * Whether the ads customer has been disconnected.
+     */
+    isSuccess?: boolean;
+  }
+}
 
 
 export declare namespace google.ads.integration.service.ads {
@@ -66,5 +77,10 @@ export declare namespace google.ads.integration.service.ads {
     getAccountId(request:
                      google.ads.integration.service.ads.GetAccountIdRequest):
         Promise<google.ads.integration.service.ads.GetAccountIdResponse>;
+    /**
+     * Disconnects the ads customer.
+     */
+    disconnect(request: google.ads.integration.service.ads.DisconnectRequest):
+        Promise<google.ads.integration.service.ads.DisconnectResponse>;
   }
 }
