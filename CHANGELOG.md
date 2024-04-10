@@ -1,3 +1,6 @@
+## Version 1.0.0
+* Publish the first GA version of PAX.
+
 ## Version 0.2.10
 * Fix locale/language that is used to load Google Ads within Jimdo. The language that is set in Jimdo should be the same language that is used for Google Ads.
   

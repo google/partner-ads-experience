@@ -100,6 +100,13 @@ let accountStatusService = {
 };
 ```
 
+#### Campaign service
+```js
+let campaignService = {
+  notifyNewCampaignCreated: ${notify_impl},
+};
+```
+
 ### Wrap all Ads app required services
 
 ```js
@@ -109,6 +116,7 @@ let paxServices = {
   conversionTrackingService: conversionTrackingService,
   termsAndConditionsService: termsAndConditionsService,
   accountStatusService: accountStatusService,
+  campaignService: campaignService,
 };
 ```
 
