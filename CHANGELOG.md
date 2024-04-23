@@ -1,3 +1,8 @@
+## Version 1.0.1
+* Support PAX mini-dashboard rendering.
+* Add some required services like page view conversion setting and date range
+  service.
+
 ## Version 1.0.0
 * Publish the first GA version of PAX.
 

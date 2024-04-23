@@ -33,6 +33,29 @@ export declare namespace google.ads.integration {
 }
 export declare namespace google.ads.integration {
   /**
+   * Ads config to launch the Ads app.
+   */
+  export interface AdsConfig {
+    /**
+     * Partner Ads Experience config to launch the Ads App.
+     */
+    partnerAdsExperienceConfig?:
+        google.ads.integration.PartnerAdsExperienceConfig;
+  }
+}
+export declare namespace google.ads.integration {
+  /**
+   * Partner Ads Experience config to launch the Ads App.
+   */
+  export interface PartnerAdsExperienceConfig {
+    /**
+     * The campaign reporting style of the partner ads experience.
+     */
+    reportingStyle?: google.ads.integration.ReportingStyle;
+  }
+}
+export declare namespace google.ads.integration {
+  /**
    * Debugging Config to launch the Ads app.
    */
   export interface DebuggingConfig {
@@ -49,6 +72,10 @@ export declare namespace google.ads.integration {
    */
   export interface Config {
     authAccess?: google.ads.integration.AuthAccess;
+    /**
+     * The configuration for Ads app.
+     */
+    contentConfig?: google.ads.integration.AdsConfig;
     clientConfig?: google.ads.integration.ClientConfig;
     /**
      * The ISO language code of Google Ads app, e.g. 'de' for Germany.
@@ -72,6 +99,17 @@ export declare namespace google.ads.integration {
   }
 }
 
+export declare namespace google.ads.integration {
+  /**
+   * Partner Ads Experience campaign reporting style.
+   *
+   * - REPORTING_STYLE_FULL:
+   *   Full campaign reporting dashboard.
+   * - REPORTING_STYLE_MINI:
+   *   Mini campaign reporting dashboard.
+   */
+  export type ReportingStyle =|'REPORTING_STYLE_FULL'|'REPORTING_STYLE_MINI';
+}
 export declare namespace google.ads.integration {
   /**
    * Environment choices to launch the Ads App.

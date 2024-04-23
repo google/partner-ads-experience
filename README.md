@@ -52,6 +52,28 @@ let paxConfig = {
   },
 };
 ```
+To add content config, set:
+```js
+let paxConfig = {
+  authAccess: {
+    oauthTokenAccess: {
+      token: ${token},
+    }
+  },
+  locale: ${locale},
+  clientConfig: {
+    contentContainer: ${ads_container_element_id},
+  },
+  debuggingConfig: {
+    env: 'QA_PROD'
+  },
+  contentConfig: {
+    partnerAdsExperienceConfig: {
+      reportingStyle: 'REPORTING_STYLE_FULL'
+    },
+  },
+};
+```
 
 ### Ads required services setup
 Ads required services play the key role to communicate between the Ads app and
@@ -72,6 +94,8 @@ let authInfoService = {
 let conversionTrackingService = {
   getSupportedConversionLabels: ${get_supported_conversion_labels_impl},
   getPageViewConversionSetting: ${get_page_view_conversion_setting_impl},
+  getSupportedConversionTrackingTypes:
+  ${get_supported_conversion_tracking_types_impl},
 };
 ```
 
@@ -107,6 +131,13 @@ let campaignService = {
 };
 ```
 
+#### Partner date range service
+```js
+let partnerDateRangeService = {
+  get: ${get_date_range_impl},
+};
+```
+
 ### Wrap all Ads app required services
 
 ```js
@@ -117,6 +148,7 @@ let paxServices = {
   termsAndConditionsService: termsAndConditionsService,
   accountStatusService: accountStatusService,
   campaignService: campaignService,
+  partnerDateRangeService: partnerDateRangeService,
 };
 ```
 
@@ -170,6 +202,13 @@ const externalCustomerId =  (await
 accountService.getAccountId(${get_account_id_request})).externalCustomerId;
 const formattedExternalCustomerId = (await
 accountService.getAccountId(${get_account_id_request})).formattedExternalCustomerId;
+```
+
+#### Notify PAX about the updated date range
+```js
+const adsDateRangeService = adsSupportedServices.adsDateRangeService;
+const updatedDateRangeService = (await
+adsDateRangeService.update(${update_selected_date_range_request}));
 ```
 
 #### Disconnect the Ads app

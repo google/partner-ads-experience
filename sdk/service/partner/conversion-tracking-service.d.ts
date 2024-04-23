@@ -47,13 +47,21 @@ export declare namespace google.ads.integration.service.partner {
 export declare namespace google.ads.integration.service.partner {
   export interface GetPageViewConversionSettingResponse {
     /**
-     * Whether to enable page view conversion set up on PAX side.
-     */
-    enablePageViewConversion?: boolean;
-    /**
      * A list of website pages under the 3P user website domain.
      */
     websitePages?: Array<google.ads.integration.service.partner.WebsitePage>;
+  }
+}
+export declare namespace google.ads.integration.service.partner {
+  export interface GetSupportedConversionTrackingTypesRequest {}
+}
+export declare namespace google.ads.integration.service.partner {
+  export interface GetSupportedConversionTrackingTypesResponse {
+    /**
+     * A list of conversion tracking types 3P supports.
+     */
+    conversionTrackingTypes?:
+        Array<google.ads.integration.service.partner.ConversionTrackingType>;
   }
 }
 export declare namespace google.ads.integration.service.partner {
@@ -69,6 +77,23 @@ export declare namespace google.ads.integration.service.partner {
   }
 }
 
+export declare namespace google.ads.integration.service.partner {
+  /**
+   * Supported conversion tracking goal types.
+   *
+   * - TYPE_UNKNOWN:
+   * - TYPE_CONVERSION_EVENT:
+   *   Conversion goal type which is usually linked to a CTA.If this type is
+   * supported by 3P, 3P needs to pass PAX with a list of supported conversion
+   * labels through ConversionTrackingService.GetSupportedConversionLabels
+   * - TYPE_PAGE_VIEW:
+   *   Conversion goal type which is linked to website page view action.If this
+   * type is supported by 3P, 3P needs to pass PAX with a list of website pages
+   * through ConversionTrackingService.GetPageViewConversionSetting
+   */
+  export type ConversionTrackingType =
+      |'TYPE_UNKNOWN'|'TYPE_CONVERSION_EVENT'|'TYPE_PAGE_VIEW';
+}
 
 export declare namespace google.ads.integration.service.partner {
   /**
@@ -93,5 +118,13 @@ export declare namespace google.ads.integration.service.partner {
                                      .GetPageViewConversionSettingRequest):
         Promise<google.ads.integration.service.partner
                     .GetPageViewConversionSettingResponse>;
+    /**
+     * Gets the list of conversion tracking types that 3P supports.
+     */
+    getSupportedConversionTrackingTypes(
+        request: google.ads.integration.service.partner
+            .GetSupportedConversionTrackingTypesRequest):
+        Promise<google.ads.integration.service.partner
+                    .GetSupportedConversionTrackingTypesResponse>;
   }
 }
