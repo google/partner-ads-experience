@@ -1,3 +1,6 @@
+## Version 1.0.2
+* Fix bugs on integrator
+
 ## Version 1.0.1
 * Support PAX mini-dashboard rendering.
 * Add some required services like page view conversion setting and date range
