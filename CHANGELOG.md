@@ -1,3 +1,6 @@
+## Version 1.0.4
+* Add PartnerDateRangeService and AdsDateRangeService
+
 ## Version 1.0.2
 * Fix bugs on integrator
 
