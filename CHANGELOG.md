@@ -1,3 +1,6 @@
+## Version 1.0.7
+* Fix minor bugs
+
 ## Version 1.0.5
 * Fix bug so that when the "Create new account" button is clicked, the embedded app's business name step is shown.
 
