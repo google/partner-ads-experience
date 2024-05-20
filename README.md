@@ -138,6 +138,13 @@ let partnerDateRangeService = {
 };
 ```
 
+#### User action service
+```js
+let userActionService = {
+  finishAndCloseSignUpFlow: ${finish_and_close_sign_up_flow_impl},
+};
+```
+
 ### Wrap all Ads app required services
 
 ```js

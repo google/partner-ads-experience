@@ -1,3 +1,6 @@
+## Version 1.0.8
+* Add user action required services
+
 ## Version 1.0.7
 * Fix minor bugs
 

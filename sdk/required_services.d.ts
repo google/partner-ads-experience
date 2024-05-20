@@ -24,6 +24,7 @@ import {google as campaign} from 'service/partner/campaign-service';
 import {google as partnerConversionTracking} from 'service/partner/conversion-tracking-service';
 import {google as partnerDateRange} from 'service/partner/partner-date-range-service';
 import {google as partnerTermsAndConditions} from 'service/partner/terms-and-conditions-service';
+import {google as userAction} from 'service/partner/user-action-service';
 /**
  * Namespace for all the services to communicate between the Ads app and the
  * partner app.
@@ -51,6 +52,9 @@ export declare namespace google.ads.integration.service {
 
     partnerDateRangeService?: partnerDateRange.ads.integration.service.partner
         .PartnerDateRangeService;
+
+    userActionService?:
+        userAction.ads.integration.service.partner.UserActionService;
   }
 
   /**
