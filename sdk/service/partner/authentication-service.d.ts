@@ -94,12 +94,14 @@ export declare namespace google.ads.integration.service.partner {
    */
   export interface AuthenticationService {
     /**
-     * Gets OAuth access token and authenticated user index to do
-     * authentication.
+     * Gets valid OAuth access token and authenticated user index
+     * to do authentication.
      *
-     * The OAuth access token would be expired after a given period
-     * of time. (e.g. one hour). This method would be called by the
-     * Ads app when the current access token is expired.
+     * This method would be called by the Ads app. Since the OAuth
+     * access token would be expired after a given period
+     * of time (e.g. one hour), the valid OAuth access token could
+     * be either cached token which is within expiration time or
+     * the refreshed token.
      */
     get(request: google.ads.integration.service.partner.GetRequest):
         Promise<google.ads.integration.service.partner.GetResponse>;

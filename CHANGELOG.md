@@ -1,3 +1,6 @@
+## Version 1.0.9
+* Fix ad blocker detector bug on integrator
+
 ## Version 1.0.8
 * Add user action required services
 
