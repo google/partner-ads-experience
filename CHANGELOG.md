@@ -1,3 +1,6 @@
+## Version 1.0.10
+* Fix minor bugs
+
 ## Version 1.0.9
 * Fix ad blocker detector bug on integrator
 
