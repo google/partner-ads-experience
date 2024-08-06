@@ -17,14 +17,14 @@
 import {google as adsAccount} from 'service/ads/account-service';
 import {google as adsDateRange} from 'service/ads/ads-date-range-service';
 import {google as adsConversionTracking} from 'service/ads/conversion-tracking-service';
-import {google as accountStatus} from 'service/partner/account-status-service';
-import {google as authentication} from 'service/partner/authentication-service';
-import {google as business} from 'service/partner/business-service';
-import {google as campaign} from 'service/partner/campaign-service';
-import {google as partnerConversionTracking} from 'service/partner/conversion-tracking-service';
-import {google as partnerDateRange} from 'service/partner/partner-date-range-service';
-import {google as partnerTermsAndConditions} from 'service/partner/terms-and-conditions-service';
-import {google as userAction} from 'service/partner/user-action-service';
+import {google as accountStatus} from 'service/partner/account_status/account-status-service';
+import {google as authentication} from 'service/partner/authentication/authentication-service';
+import {google as business} from 'service/partner/business/business-service';
+import {google as campaign} from 'service/partner/campaign/campaign-service';
+import {google as partnerConversionTracking} from 'service/partner/conversion_tracking/conversion-tracking-service';
+import {google as partnerDateRange} from 'service/partner/partner_date_range/partner-date-range-service';
+import {google as partnerTermsAndConditions} from 'service/partner/terms_and_conditions/terms-and-conditions-service';
+import {google as userAction} from 'service/partner/user_action/user-action-service';
 /**
  * Namespace for all the services to communicate between the Ads app and the
  * partner app.

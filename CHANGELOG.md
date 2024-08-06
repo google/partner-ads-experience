@@ -1,3 +1,6 @@
+## Version 1.0.11
+* Refactor ScopeExchange
+
 ## Version 1.0.10
 * Fix minor bugs
 
