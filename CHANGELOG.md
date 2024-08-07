@@ -1,5 +1,5 @@
 ## Version 1.0.11
-* Refactor ScopeExchange
+* Refactor integrator and fix minor bugs
 
 ## Version 1.0.10
 * Fix minor bugs
