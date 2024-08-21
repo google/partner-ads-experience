@@ -1,3 +1,6 @@
+## Version 1.0.12
+* Make PAX launch app with new App id
+
 ## Version 1.0.11
 * Refactor integrator and fix minor bugs
 
