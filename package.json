@@ -1,6 +1,6 @@
 {
   "name": "google-pax-sdk",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Type declaration files required to launch the partner ads experience (PAX)",
   "repository": "google/partner-ads-experience",
   "author": "Google PAX team"

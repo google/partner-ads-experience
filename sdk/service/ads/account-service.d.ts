@@ -23,7 +23,7 @@ export declare namespace google.ads.integration.service.ads {
     /**
      * Whether the user has accepted the ads terms and conditions.
      */
-    isAccepted?: boolean;
+    isAccepted: boolean;
   }
 }
 export declare namespace google.ads.integration.service.ads {
@@ -34,15 +34,15 @@ export declare namespace google.ads.integration.service.ads {
     /**
      * The customer id of the ads customer.
      */
-    customerId?: number;
+    customerId: number;
     /**
      * The external customer id of the ads customer.
      */
-    externalCustomerId?: number;
+    externalCustomerId: number;
     /**
      * The formatted external customer id of the ads customer.
      */
-    formattedExternalCustomerId?: string;
+    formattedExternalCustomerId: string;
   }
 }
 export declare namespace google.ads.integration.service.ads {
@@ -53,7 +53,7 @@ export declare namespace google.ads.integration.service.ads {
     /**
      * Whether the ads customer has been disconnected.
      */
-    isSuccess?: boolean;
+    isSuccess: boolean;
   }
 }
 

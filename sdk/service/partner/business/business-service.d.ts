@@ -20,8 +20,8 @@ export declare namespace google.ads.integration.service.partner {
 }
 export declare namespace google.ads.integration.service.partner {
   export interface GetBusinessInfoResponse {
-    businessName?: string;
-    businessUrl?: string;
+    businessName: string;
+    businessUrl: string;
   }
 }
 export declare namespace google.ads.integration.service.partner {

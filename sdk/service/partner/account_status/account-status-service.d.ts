@@ -31,7 +31,9 @@ export declare namespace google.ads.integration.service.partner {
   export interface AccountStatusService {
     /**
      * Notify partner that the user wants to disconnect their
-     * Google Ads account.
+     * Google Ads account. Upon called, partner should clear refresh token
+     * storage, remove conversion tracking code snippets, and maybe re-initiate
+     * user login process.
      */
     disconnect(request:
                    google.ads.integration.service.partner.DisconnectRequest):

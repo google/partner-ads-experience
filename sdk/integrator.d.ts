@@ -36,8 +36,8 @@ export declare namespace google.ads.integration {
      * @return Promise<AdsApp>.
      */
     launchGoogleAds(
-        config?: googleConfig.ads.integration.Config,
-        services?: googleService.ads.integration.service.RequiredServicesByAds,
+        config: googleConfig.ads.integration.Config,
+        services: googleService.ads.integration.service.RequiredServicesByAds,
         ): Promise<AdsApp>;
   }
 

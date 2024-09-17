@@ -50,7 +50,9 @@ export declare namespace google.ads.integration.service.ads {
 
 export declare namespace google.ads.integration.service.ads {
   /**
-   * Service called by the partner for date range related info.
+   * Service called by the partner for date range related info when
+   * REPORTING_STYLE_MINI is used in
+   * Config.contentConfig.partnerAdsExperienceConfig.reportingStyle.
    *
    * This service is provided by the Ads app.
    */

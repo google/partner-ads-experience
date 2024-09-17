@@ -21,7 +21,8 @@ export declare namespace google.ads.integration.service.partner {
 export declare namespace google.ads.integration.service.partner {
   export interface GetConversionLabelsResponse {
     /**
-     * The list of conversion goal labels supported by the partner.
+     * The list of conversion goal labels supported by the partner. At least one
+     * label is required.
      *
      * The list of conversion goal labels would be pre-defined
      * between Google Ads and the partner.
@@ -58,7 +59,8 @@ export declare namespace google.ads.integration.service.partner {
 export declare namespace google.ads.integration.service.partner {
   export interface GetSupportedConversionTrackingTypesResponse {
     /**
-     * A list of conversion tracking types 3P supports.
+     * A list of conversion tracking types 3P supports. At least one type is
+     * required.
      */
     conversionTrackingTypes?:
         Array<google.ads.integration.service.partner.ConversionTrackingType>;

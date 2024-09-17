@@ -1,3 +1,7 @@
+## Version 1.0.13
+* Update integrator to use new App id with IPL variables.
+* Remove option mark for some required services api.
+
 ## Version 1.0.12
 * Make PAX launch app with new App id
 
