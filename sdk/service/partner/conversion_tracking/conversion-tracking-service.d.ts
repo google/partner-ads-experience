@@ -109,15 +109,17 @@ export declare namespace google.ads.integration.service.partner {
      * Gets a list of supported conversion goal labels supported by
      * the partner.
      */
-    getSupportedConversionLabels(request: google.ads.integration.service.partner
-                                     .GetConversionLabelsRequest):
+    getSupportedConversionLabels(
+        request:
+            google.ads.integration.service.partner.GetConversionLabelsRequest):
         Promise<
             google.ads.integration.service.partner.GetConversionLabelsResponse>;
     /**
      * Gets the page view conversion setting.
      */
-    getPageViewConversionSetting(request: google.ads.integration.service.partner
-                                     .GetPageViewConversionSettingRequest):
+    getPageViewConversionSetting(
+        request: google.ads.integration.service.partner
+            .GetPageViewConversionSettingRequest):
         Promise<google.ads.integration.service.partner
                     .GetPageViewConversionSettingResponse>;
     /**

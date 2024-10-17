@@ -31,8 +31,9 @@ export declare namespace google.ads.integration.service.partner {
     /**
      * User finishes and closes the sign up flow in the PAX experience.
      */
-    finishAndCloseSignUpFlow(request: google.ads.integration.service.partner
-                                 .FinishAndCloseSignUpFlowRequest):
+    finishAndCloseSignUpFlow(
+        request: google.ads.integration.service.partner
+            .FinishAndCloseSignUpFlowRequest):
         Promise<google.ads.integration.service.partner
                     .FinishAndCloseSignUpFlowResponse>;
   }

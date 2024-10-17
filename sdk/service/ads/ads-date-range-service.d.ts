@@ -60,8 +60,9 @@ export declare namespace google.ads.integration.service.ads {
     /**
      * Update the Ads app about the selected date range.
      */
-    update(request: google.ads.integration.service.ads
-               .UpdateSelectedDateRangeRequest):
+    update(
+        request:
+            google.ads.integration.service.ads.UpdateSelectedDateRangeRequest):
         Promise<
             google.ads.integration.service.ads.UpdateSelectedDateRangeResponse>;
   }

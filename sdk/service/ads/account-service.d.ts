@@ -67,15 +67,16 @@ export declare namespace google.ads.integration.service.ads {
     /**
      * Gets whether the user has accepted the terms and conditions.
      */
-    getTermsAndConditionsState(request: google.ads.integration.service.ads
-                                   .GetTermsAndConditionsStateRequest):
+    getTermsAndConditionsState(
+        request: google.ads.integration.service.ads
+            .GetTermsAndConditionsStateRequest):
         Promise<google.ads.integration.service.ads
                     .GetTermsAndConditionsStateResponse>;
     /**
      * Gets the account id of the ads customer.
      */
-    getAccountId(request:
-                     google.ads.integration.service.ads.GetAccountIdRequest):
+    getAccountId(
+        request: google.ads.integration.service.ads.GetAccountIdRequest):
         Promise<google.ads.integration.service.ads.GetAccountIdResponse>;
     /**
      * Disconnects the ads customer.

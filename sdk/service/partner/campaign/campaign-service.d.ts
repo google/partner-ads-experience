@@ -32,8 +32,9 @@ export declare namespace google.ads.integration.service.partner {
     /**
      * Notify partner that the user created a new campaign.
      */
-    notifyNewCampaignCreated(request: google.ads.integration.service.partner
-                                 .NotifyNewCampaignCreatedRequest):
+    notifyNewCampaignCreated(
+        request: google.ads.integration.service.partner
+            .NotifyNewCampaignCreatedRequest):
         Promise<google.ads.integration.service.partner
                     .NotifyNewCampaignCreatedResponse>;
   }

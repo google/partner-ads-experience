@@ -1,3 +1,7 @@
+## Version 1.0.14
+* Update integrator README
+* Update integrator logging
+
 ## Version 1.0.13
 * Update integrator to use new App id with IPL variables.
 * Remove option mark for some required services api.

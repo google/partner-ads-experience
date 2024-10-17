@@ -38,8 +38,9 @@ export declare namespace google.ads.integration.service.ads {
    * This service is provided by the Ads app.
    */
   export interface ConversionTrackingIdService {
-    getConversionTrackingId(request: google.ads.integration.service.ads
-                                .GetConversionTrackingIdRequest):
+    getConversionTrackingId(
+        request:
+            google.ads.integration.service.ads.GetConversionTrackingIdRequest):
         Promise<
             google.ads.integration.service.ads.GetConversionTrackingIdResponse>;
   }

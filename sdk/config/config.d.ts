@@ -53,6 +53,11 @@ export declare namespace google.ads.integration {
      * it is full reporting style.
      */
     reportingStyle?: google.ads.integration.ReportingStyle;
+    /**
+     * The display mode of the partner ads experience. By default, it is full
+     * display mode.
+     */
+    displayMode?: google.ads.integration.DisplayMode;
   }
 }
 export declare namespace google.ads.integration {
@@ -94,7 +99,8 @@ export declare namespace google.ads.integration {
    */
   export interface ClientConfig {
     /**
-     * The container element id to launch the Ads app.
+     * The container element selector to launch the Ads app. Example:
+     * #ads-app-container
      */
     contentContainer: string;
   }
@@ -110,6 +116,17 @@ export declare namespace google.ads.integration {
    *   Mini campaign reporting dashboard.
    */
   export type ReportingStyle =|'REPORTING_STYLE_FULL'|'REPORTING_STYLE_MINI';
+}
+export declare namespace google.ads.integration {
+  /**
+   * Partner Ads Experience display mode.
+   *
+   * - DISPLAY_MODEL_FULL:
+   *   Full display mode including campaign signup flow and reporting dashboard.
+   * - DISPLAY_MODE_SIGNUP_FLOW:
+   *   Signup flow only, no reporting dashboard will be shown in this mode.
+   */
+  export type DisplayMode =|'DISPLAY_MODEL_FULL'|'DISPLAY_MODE_SIGNUP_FLOW';
 }
 export declare namespace google.ads.integration {
   /**

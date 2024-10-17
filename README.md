@@ -1,228 +1,96 @@
-# Partner Ads Experience (PAX) API
+# Partner Ads Experience (PAX)
 
-This Repository contains all of the interfaces needed to integrate with
-Google Partner Ads experience.
+## Introduction
 
-This SDK is required when you develop your app with Typescript. For javascript
-developer, this SDK is not required as part of your app library. But it is also
-useful to check the type declaration files during integration developing
-process.
+Partner Ads Experience is a solution for third-party partner websites to integrate with Google Ads Performance Max campaign construction and management experience with low upfront cost and future maintenance burden. In this solution, third-party partner websites can easily call the launching API provided by PAX to download and render Google Ads UI which is built and maintained by Google.
 
-| Directory/file               | Description                                                                             |
-| ---------------------------- | --------------------------------------------------------------------------------------- |
-| `sdk/integrator.d.ts`        | The Ads app integrator entry point                                                      |
-| `sdk/config`                 | Configuration required by the Ads app to launch the partner ads experience              |
-| `sdk/required_services.d.ts` | Wrapper interface for all the communication required services                           |
-| `sdk/services`               | All service interfaces required to communicate between the partner app and the Ads app  |
-| `sdk/services/ads`           | Services provided by the Ads app and called by the partner                              |
-| `sdk/services/partner`       | Services provided by the partner and called by the Ads app                              |
+PAX solution includes 2 components:
+
+* PAX integrator: A javascript library served from [https://www.gstatic.com/pax/latest/pax_integrator.js](https://www.gstatic.com/pax/latest/pax_integrator.js) which provides the launching API.
+* PAX SDK: The repository which provides TypeScript type information (d.ts) about PAX integrator. This SDK is required when you develop your app with Typescript. For javascript developers, this SDK is not required as part of your app library. But it is also useful to check the type declaration files during the integration development process.
+
+## Terminology
+
+### Launching API
+
+The API provided by PAX to download and render Google Ads UI.
+
+### Service
+
+“Service” represents the interface for cross-app communication. PAX provides 2 types of service:
+
+* Partner service: The 3P partner needs to implement these services which are called by Google Ads app. Google Ads app calls these services to get 3P partner information, notify the 3P partner and control 3P partner behavior.
+* Ads service: The 3P partner can use these services provided by Google Ads app to get Ads information, notify Ads App and control Ads behavior.
+
+## Directory
+
+PAX SDK can be accessed under the **sdk/** directory in this NPM repository. The SDK directory structure is as follows:
+
+
+| Directory/file               | Description                                                                                   |
+| ---------------------------- | ----------------------------------------------------------------------------------------------|
+| `sdk/integrator.d.ts`        | The integrator launch API called by the partner app to launch PAX                             |
+| `sdk/config`                 | Configuration required by PAX to launch the Ads app                                           |
+| `sdk/required_services.d.ts` | Wrapper interface for all the services to communicate between the Ads app and the partner app |
+| `sdk/services`               | Services provided by the Ads app and called by the partner app                                |
+| `sdk/services/ads`           | Services provided by the partner app and called by the Ads app                                |
+| `sdk/services/partner`       | Shared interfaces which are referenced by both partner and Ads provider service interfaces    |
+
+## Prerequisite
+
+Before starting to integrate with PAX, Google OAuth 2.0 ([Link](https://developers.google.com/identity/protocols/oauth2)) setup is required. To access PAX, scopes ‘https://www.googleapis.com/auth/adwords’ and ‘https://www.googleapis.com/auth/supportcontent’ are needed.
 
 ## Quick start
 
-**Note:** The following code assumes that you develop with Javascript.
+An example is included in this section for a quick start. Please refer to the source code for a full interface description.
+In your html, define where Google Ads UI should be inserted. And tag the container with an id. Example:
 
-### Config setup
+```
+<div id="google-ads-pax-container"></div>
+```
+Then in your JavaScript (please make necessary changes based on your techstack), integrate with PAX API:
+
 ```js
 let paxConfig = {
   authAccess: {
     oauthTokenAccess: {
-      token: ${token},
+      token: {access token you obtained from Google authorization server},
     }
   },
-  locale: ${locale},
   clientConfig: {
-    contentContainer: ${ads_container_element_id},
+    // contentContainer selector. It will eventually be queried with document.querySelector
+    contentContainer: {selector of Google Ads UI container, or #google-ads-pax-container in the example above}",
   },
 };
-```
-To add debugging config, set:
-```js
-let paxConfig = {
-  authAccess: {
-    oauthTokenAccess: {
-      token: ${token},
-    }
-  },
-  locale: ${locale},
-  clientConfig: {
-    contentContainer: ${ads_container_element_id},
-  },
-  debuggingConfig: {
-    env: 'QA_PROD'
-  },
-};
-```
-To add content config, set:
-```js
-let paxConfig = {
-  authAccess: {
-    oauthTokenAccess: {
-      token: ${token},
-    }
-  },
-  locale: ${locale},
-  clientConfig: {
-    contentContainer: ${ads_container_element_id},
-  },
-  debuggingConfig: {
-    env: 'QA_PROD'
-  },
-  contentConfig: {
-    partnerAdsExperienceConfig: {
-      reportingStyle: 'REPORTING_STYLE_FULL'
+let paxServices = {
+  authenticationService: {
+    get: function(request) {
+      return Promise.resolve({
+        accessToken: accessToken
+      });
+    },
+    fix: function(request) {
+      // Refresh access token. And return only after PAX can retry token fetching.
+      return Promise.resolve({
+        retryReady: true
+      });
     },
   },
+  businessService: {your business service implementation},
+  // other services
 };
-```
-
-### Ads required services setup
-Ads required services play the key role to communicate between the Ads app and
-the partner app during the Ads app running time.
-
-#### OAuth data
-
-```js
-let authInfoService = {
-  get: ${get_access_info_impl},
-  fix: ${fix_access_info_impl},
-};
-```
-
-#### Conversion tracking
-
-```js
-let conversionTrackingService = {
-  getSupportedConversionLabels: ${get_supported_conversion_labels_impl},
-  getPageViewConversionSetting: ${get_page_view_conversion_setting_impl},
-  getSupportedConversionTrackingTypes:
-  ${get_supported_conversion_tracking_types_impl},
-};
-```
-
-#### Business info
-
-```js
-let businessService = {
-  getBusinessInfo: ${get_business_info_impl},
-  fixBusinessInfo: ${fix_business_info_impl},
-};
-```
-
-#### Terms and conditions
-
-```js
-let termsAndConditionsService = {
-  notify: ${notify_impl},
-};
-```
-
-#### Account status
-
-```js
-let accountStatusService = {
-  disconnect: ${disconnect_impl},
-};
-```
-
-#### Campaign service
-```js
-let campaignService = {
-  notifyNewCampaignCreated: ${notify_impl},
-};
-```
-
-#### Partner date range service
-```js
-let partnerDateRangeService = {
-  get: ${get_date_range_impl},
-};
-```
-
-#### User action service
-```js
-let userActionService = {
-  finishAndCloseSignUpFlow: ${finish_and_close_sign_up_flow_impl},
-};
-```
-
-### Wrap all Ads app required services
-
-```js
-let paxServices = {
-  authenticationService: authInfoService,
-  businessService: businessService,
-  conversionTrackingService: conversionTrackingService,
-  termsAndConditionsService: termsAndConditionsService,
-  accountStatusService: accountStatusService,
-  campaignService: campaignService,
-  partnerDateRangeService: partnerDateRangeService,
-};
-```
-
-### Launch with the integrator
-
-```js
-// Insert the script with integrator js file from Google gstatic.com.
+// Insert PAX integrator
 let sc = document.createElement('script');
-sc.src = 'https://www.gstatic.com/pax/${version}/pax_integrator.js';
+sc.src = 'https://www.gstatic.com/pax/latest/pax_integrator.js';
 document.body.append(sc);
 
-// Create an element to launch the Ads app.
-let rootContainer = document.getElementById(${root_element_id});
-let adsContainer = document.createElement('div');
-adsContainer.id = ${ads_container_element_id};
-rootContainer.appendChild(adsContainer);
-
-// Call launch api
-google.ads.integration.integrator.launchGoogleAds(paxConfig, paxServices);
-```
-
-### Get services supported by the Ads app
-
-```js
+// Call launching API.
 const adsAppHandler = await google.ads.integration.integrator.launchGoogleAds(paxConfig, paxServices);
+
+// The following example shows how to call Ads service. Please refer to source code for other services.
 const adsSupportedServices = adsAppHandler.getServices();
-```
-
-#### Get conversion tracking id from the Ads app
-
-```js
 const ctService = adsSupportedServices.conversionTrackingService;
-const conversionTrackingId = (await ctService.getConversionTrackingId(${get_conversion_tracking_id_request})).conversionTrackingId;
-```
-
-#### Get terms and conditions state from the Ads app
-
-```js
-const accountService = adsSupportedServices.accountService;
-const termsAndServicesIsAccepted = (await
-accountService.getTermsAndConditionsState(${get_terms_and_conditions_state_request})).isAccepted;
-```
-
-#### Get account id from the Ads app
-
-```js
-const accountService = adsSupportedServices.accountService;
-const customerId = (await
-accountService.getAccountId(${get_account_id_request})).customerId;
-const externalCustomerId =  (await
-accountService.getAccountId(${get_account_id_request})).externalCustomerId;
-const formattedExternalCustomerId = (await
-accountService.getAccountId(${get_account_id_request})).formattedExternalCustomerId;
-```
-
-#### Notify PAX about the updated date range
-```js
-const adsDateRangeService = adsSupportedServices.adsDateRangeService;
-const updatedDateRangeService = (await
-adsDateRangeService.update(${update_selected_date_range_request}));
-```
-
-#### Disconnect the Ads app
-```js
-const accountService = adsSupportedServices.accountService;
-const disconnectIsSuccess = (await
-accountService.disconnect(${disconnect_request})).isSuccess;
+const conversionTrackingId = (await ctService.getConversionTrackingId({})).conversionTrackingId;
 ```
 
 ## Contributing guidelines

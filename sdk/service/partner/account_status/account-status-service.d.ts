@@ -35,8 +35,8 @@ export declare namespace google.ads.integration.service.partner {
      * storage, remove conversion tracking code snippets, and maybe re-initiate
      * user login process.
      */
-    disconnect(request:
-                   google.ads.integration.service.partner.DisconnectRequest):
+    disconnect(
+        request: google.ads.integration.service.partner.DisconnectRequest):
         Promise<google.ads.integration.service.partner.DisconnectResponse>;
   }
 }
