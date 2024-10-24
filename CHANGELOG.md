@@ -1,3 +1,6 @@
+## Version 1.0.15
+* Update PAX config API to include UI customization config API.
+
 ## Version 1.0.14
 * Update integrator README
 * Update integrator logging

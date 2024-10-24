@@ -33,6 +33,55 @@ export declare namespace google.ads.integration {
 }
 export declare namespace google.ads.integration {
   /**
+   * PAX UI customization config. Google Ads app follows Material Design 2
+   * style. Please refer https://m2.material.io/for more details.
+   *
+   *
+   */
+  export interface UiCustomizationConfig {
+    /**
+     * General customization config for the Ads app.
+     */
+    generalCustomization: google.ads.integration.GeneralCustomizationConfig;
+  }
+}
+export declare namespace google.ads.integration {
+  /**
+   * General customization config for the Ads app.This config includes the
+   * customization applied across the Ads app.
+   */
+  export interface GeneralCustomizationConfig {
+    /**
+     * Theme colour customization config for the Ads app.
+     */
+    themeColourCustomization:
+        google.ads.integration.ThemeColourCustomizationConfig;
+  }
+}
+export declare namespace google.ads.integration {
+  /**
+   * Theme colour customization config for the Ads app, e.g. primary colour,
+   * error colour.
+   *
+   * Please refer
+   * https://m2.material.io/design/color/the-color-system.html#color-theme-creation
+   * for more details about theme colour definition.
+   */
+  export interface ThemeColourCustomizationConfig {
+    /**
+     * Primary colour customization of the Ads app.The value should be HEX color
+     * code in the format of #RRGGBB.
+     */
+    primaryColour: string;
+    /**
+     * Error colour customization of the Ads app.The value should be HEX color
+     * code in the format of #RRGGBB.
+     */
+    errorColor?: string;
+  }
+}
+export declare namespace google.ads.integration {
+  /**
    * Ads config to launch the Ads app.
    */
   export interface AdsConfig {
@@ -103,6 +152,10 @@ export declare namespace google.ads.integration {
      * #ads-app-container
      */
     contentContainer: string;
+    /**
+     * The UI customization config for the Ads app.
+     */
+    uiCustomizationConfig?: google.ads.integration.UiCustomizationConfig;
   }
 }
 
