@@ -73,11 +73,6 @@ export declare namespace google.ads.integration {
      * code in the format of #RRGGBB.
      */
     primaryColour: string;
-    /**
-     * Error colour customization of the Ads app.The value should be HEX color
-     * code in the format of #RRGGBB.
-     */
-    errorColor?: string;
   }
 }
 export declare namespace google.ads.integration {

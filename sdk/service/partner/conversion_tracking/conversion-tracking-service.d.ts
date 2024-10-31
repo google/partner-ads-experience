@@ -123,7 +123,9 @@ export declare namespace google.ads.integration.service.partner {
         Promise<google.ads.integration.service.partner
                     .GetPageViewConversionSettingResponse>;
     /**
-     * Gets the list of conversion tracking types that 3P supports.
+     * Gets the list of conversion tracking types that 3P supports. If 3P
+     * doesn't support any conversion tracking type, for example, 3P doesn't
+     * have control over the website, 3P should return an empty list.
      */
     getSupportedConversionTrackingTypes(
         request: google.ads.integration.service.partner

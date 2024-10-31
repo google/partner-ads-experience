@@ -1,3 +1,6 @@
+## Version 1.0.16
+* Update PAX ui customization config.
+
 ## Version 1.0.15
 * Update PAX config API to include UI customization config API.
 
