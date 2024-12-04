@@ -1,3 +1,8 @@
+## Version 1.1.0
+* Update integrator to add sanity check for cross-app communication service setup.
+* Update integrator to support ui customization on more PAX flow steps.
+* Update SDK APIs comments and mark APIs as optional when needed. 
+
 ## Version 1.0.16
 * Update PAX ui customization config.
 

@@ -109,19 +109,19 @@ export declare namespace google.ads.integration.service.partner {
      * Gets a list of supported conversion goal labels supported by
      * the partner.
      */
-    getSupportedConversionLabels(
-        request:
-            google.ads.integration.service.partner.GetConversionLabelsRequest):
-        Promise<
-            google.ads.integration.service.partner.GetConversionLabelsResponse>;
+    getSupportedConversionLabels?
+        (request:
+             google.ads.integration.service.partner.GetConversionLabelsRequest):
+            Promise<google.ads.integration.service.partner
+                        .GetConversionLabelsResponse>;
     /**
      * Gets the page view conversion setting.
      */
-    getPageViewConversionSetting(
-        request: google.ads.integration.service.partner
-            .GetPageViewConversionSettingRequest):
-        Promise<google.ads.integration.service.partner
-                    .GetPageViewConversionSettingResponse>;
+    getPageViewConversionSetting?
+        (request: google.ads.integration.service.partner
+             .GetPageViewConversionSettingRequest):
+            Promise<google.ads.integration.service.partner
+                        .GetPageViewConversionSettingResponse>;
     /**
      * Gets the list of conversion tracking types that 3P supports. If 3P
      * doesn't support any conversion tracking type, for example, 3P doesn't

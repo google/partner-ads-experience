@@ -16,7 +16,12 @@
 
 
 export declare namespace google.ads.integration.service.partner {
-  export interface NotifyNewCampaignCreatedRequest {}
+  export interface NotifyNewCampaignCreatedRequest {
+    /**
+     * The id of the newly created campaign.
+     */
+    campaignId: number;
+  }
 }
 export declare namespace google.ads.integration.service.partner {
   export interface NotifyNewCampaignCreatedResponse {}

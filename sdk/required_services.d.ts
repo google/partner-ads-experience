@@ -37,13 +37,13 @@ export declare namespace google.ads.integration.service {
     authenticationService:
         authentication.ads.integration.service.partner.AuthenticationService;
 
-    businessService: business.ads.integration.service.partner.BusinessService;
+    businessService?: business.ads.integration.service.partner.BusinessService;
 
     conversionTrackingService: partnerConversionTracking.ads.integration.service
         .partner.ConversionTrackingService;
 
-    termsAndConditionsService: partnerTermsAndConditions.ads.integration.service
-        .partner.TermsAndConditionsService;
+    termsAndConditionsService?: partnerTermsAndConditions.ads.integration
+        .service.partner.TermsAndConditionsService;
 
     accountStatusService?:
         accountStatus.ads.integration.service.partner.AccountStatusService;

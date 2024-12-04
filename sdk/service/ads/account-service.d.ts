@@ -32,10 +32,6 @@ export declare namespace google.ads.integration.service.ads {
 export declare namespace google.ads.integration.service.ads {
   export interface GetAccountIdResponse {
     /**
-     * The customer id of the ads customer.
-     */
-    customerId: number;
-    /**
      * The external customer id of the ads customer.
      */
     externalCustomerId: number;
