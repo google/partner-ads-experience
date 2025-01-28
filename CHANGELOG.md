@@ -1,3 +1,6 @@
+## Version 1.1.1
+* Update integrator license.
+
 ## Version 1.1.0
 * Update integrator to add sanity check for cross-app communication service setup.
 * Update integrator to support ui customization on more PAX flow steps.
