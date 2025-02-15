@@ -50,6 +50,8 @@ In your html, define where Google Ads UI should be inserted. And tag the contain
 ```
 Then in your JavaScript (please make necessary changes based on your techstack), integrate with PAX API:
 
+### Set up PAX config
+
 ```js
 let paxConfig = {
   authAccess: {
@@ -62,6 +64,16 @@ let paxConfig = {
     contentContainer: {selector of Google Ads UI container, or #google-ads-pax-container in the example above}",
   },
 };
+```
+
+### Set up PAX services
+
+Depending on your ability to set up conversion tracking, use one of the two
+examples provided below.
+
+#### Example if you can set up conversion tracking:
+
+```js
 let paxServices = {
   authenticationService: {
     get: function(request) {
@@ -70,15 +82,99 @@ let paxServices = {
       });
     },
     fix: function(request) {
-      // Refresh access token. And return only after PAX can retry token fetching.
+      // Refreshes access token. And returns only after PAX can retry token
+      // fetching.
       return Promise.resolve({
         retryReady: true
       });
     },
   },
-  businessService: {your business service implementation},
-  // other services
+  businessService: {
+    getBusinessInfo: function(request) {
+      return Promise.resolve({
+        businessName: {The user website business name}
+        businessUrl: {The user website}
+      });
+    },
+    fixBusinessInfo: function(request) {
+      // Fixes business info issues.
+      // Returns trun when successfully get the business name and url.
+      return Promise.resolve({
+        retryReady: true
+      });
+    },
+  },
+  conversionTrackingService: {
+    getSupportedConversionTrackingTypes: function(request) {
+      return Promise.resolve({
+        conversionTrackingTypes: ['TYPE_CONVERSION_EVENT']
+      });
+    },
+    getSupportedConversionLabels: function(request) {
+      return Promise.resolve({
+        // Returns a non-empty list of conversion labels which apply to this
+        // website.
+        conversionLabels: ['purchase']
+      });
+    },
+  },
+  termsAndConditionsService: {
+    notify: function(request) {
+      // Checks the request.isAccepted and handle correspondingly.
+      // For example after the user accepts TOS, the CMS partner could install
+      // conversion tracking id and snippet into the user website.
+      if (request.isAccepted) {
+        // Get conversion tracking id (example below) and set up conversion
+        // tracking
+      }
+      return Promise.resolve({});
+    },
+  },
+  accountStatusService: {
+    disconnect: function(request) {
+      // Deletes conversion tracking tags from the user website.
+      // Removes stored authentication information (e.g. access token) from
+      // your database.
+      return Promise.resolve({});
+    },
+  },
+  // Other optional services implementation based on use case. You could check
+  // more details from the SDK.
+  // Please make sure each service implementation needs to return the response.
 };
+```
+#### Example if you CANNOT set up conversion tracking
+
+```js
+let paxServices = {
+  authenticationService: {
+    get: function(request) {
+      return Promise.resolve({
+        accessToken: accessToken
+      )};
+    },
+    fix: function(request) {
+      // Refreshes access token. And returns only after PAX can retry token
+      // fetching.
+      return Promise.resolve({
+        retryReady: true
+      });
+    },
+  },
+  conversionTrackingService: {
+    getSupportedConversionTrackingTypes: function(request) {
+      return Promise.resolve({});
+    },
+  },
+  // Other optional services implementation based on use case. You could
+  // check more details from the SDK.
+  // Please make sure each service implementation needs to return the response.
+};
+```
+
+### Launch Google Ads with PAX integrator
+
+```js
 // Insert PAX integrator
 let sc = document.createElement('script');
 sc.src = 'https://www.gstatic.com/pax/latest/pax_integrator.js';
