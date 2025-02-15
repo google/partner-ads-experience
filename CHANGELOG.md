@@ -1,3 +1,8 @@
+## Version 1.1.2
+* Update PAX integrator to add some more enforcement checks for conversion
+  tracking service setup from 3P.
+* Update README to add some more examples about service implementations.
+
 ## Version 1.1.1
 * Update integrator license.
 
