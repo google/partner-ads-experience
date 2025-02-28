@@ -1,3 +1,8 @@
+## Version 1.1.3
+* Add customerId and userId to AccountService.GetAccountId response
+* Add GetGoogleAdsUrl method to AccountService
+* Add accountOverviewUrl to GetGoogleAdsUrl response
+
 ## Version 1.1.2
 * Update PAX integrator to add some more enforcement checks for conversion
   tracking service setup from 3P.

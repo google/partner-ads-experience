@@ -29,7 +29,9 @@ export declare namespace google.ads.integration.service.partner {
    */
   export interface UserActionService {
     /**
-     * User finishes and closes the sign up flow in the PAX experience.
+     * User finishes and closes the sign up flow in the PAX experience when
+     * DISPLAY_MODE_SIGNUP_FLOW is specified in
+     * Config.contentConfig.partnerAdsExperienceConfig.displayMode.
      */
     finishAndCloseSignUpFlow(
         request: google.ads.integration.service.partner

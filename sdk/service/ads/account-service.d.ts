@@ -39,6 +39,14 @@ export declare namespace google.ads.integration.service.ads {
      * The formatted external customer id of the ads customer.
      */
     formattedExternalCustomerId: string;
+    /**
+     * The customer id of the ads customer.
+     */
+    customerId: number;
+    /**
+     * The user id of the ads customer.
+     */
+    userId: number;
   }
 }
 export declare namespace google.ads.integration.service.ads {
@@ -50,6 +58,17 @@ export declare namespace google.ads.integration.service.ads {
      * Whether the ads customer has been disconnected.
      */
     isSuccess: boolean;
+  }
+}
+export declare namespace google.ads.integration.service.ads {
+  export interface GetGoogleAdsUrlRequest {}
+}
+export declare namespace google.ads.integration.service.ads {
+  export interface GetGoogleAdsUrlResponse {
+    /**
+     * The ads account overview url.
+     */
+    accountOverviewUrl: string;
   }
 }
 
@@ -79,5 +98,11 @@ export declare namespace google.ads.integration.service.ads {
      */
     disconnect(request: google.ads.integration.service.ads.DisconnectRequest):
         Promise<google.ads.integration.service.ads.DisconnectResponse>;
+    /**
+     * Gets the Google ads url, which may only work after customer is signed up.
+     */
+    getGoogleAdsUrl(
+        request: google.ads.integration.service.ads.GetGoogleAdsUrlRequest):
+        Promise<google.ads.integration.service.ads.GetGoogleAdsUrlResponse>;
   }
 }
