@@ -1,3 +1,5 @@
+## Version 1.1.4
+* Improve integrator to prevent launching PAX multiple times from partner side.
 ## Version 1.1.3
 * Add customerId and userId to AccountService.GetAccountId response
 * Add GetGoogleAdsUrl method to AccountService
