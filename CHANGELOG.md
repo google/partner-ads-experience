@@ -1,5 +1,9 @@
+## Version 1.1.5
+* Improve README to add some more PAX service examples.
+
 ## Version 1.1.4
 * Improve integrator to prevent launching PAX multiple times from partner side.
+
 ## Version 1.1.3
 * Add customerId and userId to AccountService.GetAccountId response
 * Add GetGoogleAdsUrl method to AccountService
@@ -16,7 +20,7 @@
 ## Version 1.1.0
 * Update integrator to add sanity check for cross-app communication service setup.
 * Update integrator to support ui customization on more PAX flow steps.
-* Update SDK APIs comments and mark APIs as optional when needed. 
+* Update SDK APIs comments and mark APIs as optional when needed.
 
 ## Version 1.0.16
 * Update PAX ui customization config.

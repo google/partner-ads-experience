@@ -138,6 +138,17 @@ let paxServices = {
       return Promise.resolve({});
     },
   },
+  // Campaign service which is optional to set
+  campaignService: {
+    notifyNewCampaignCreated: function(request) {
+      // Read the campaignId
+      let campaignId = request.campaignId;
+
+      // Use campaignId or store it for future use.
+
+      return Promise.resolve({});
+    }
+  }
   // Other optional services implementation based on use case. You could check
   // more details from the SDK.
   // Please make sure each service implementation needs to return the response.
@@ -166,6 +177,17 @@ let paxServices = {
       return Promise.resolve({});
     },
   },
+  // Campaign service which is optional to set
+  campaignService: {
+    notifyNewCampaignCreated: function(request) {
+      // Read the campaignId
+      let campaignId = request.campaignId;
+
+      // Use campaignId or store it for future use.
+
+      return Promise.resolve({});
+    }
+  }
   // Other optional services implementation based on use case. You could
   // check more details from the SDK.
   // Please make sure each service implementation needs to return the response.
@@ -187,6 +209,8 @@ const adsAppHandler = await google.ads.integration.integrator.launchGoogleAds(pa
 const adsSupportedServices = adsAppHandler.getServices();
 const ctService = adsSupportedServices.conversionTrackingService;
 const conversionTrackingId = (await ctService.getConversionTrackingId({})).conversionTrackingId;
+const accountService = adsAppHandler.getServices();
+const customerId = (await accountService.getAccountId({})).customerId;
 ```
 
 ## Contributing guidelines
