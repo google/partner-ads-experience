@@ -1,3 +1,6 @@
+## Version 1.1.6
+* Fix PAX logging failure.
+
 ## Version 1.1.5
 * Improve README to add some more PAX service examples.
 
