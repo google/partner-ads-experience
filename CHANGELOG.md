@@ -1,3 +1,6 @@
+## Version 1.1.7
+* Allow clients to check if config is present in integrator.
+
 ## Version 1.1.6
 * Fix PAX logging failure.
 
