@@ -1,3 +1,6 @@
+## Version 1.1.8
+* Fix minor bugs
+
 ## Version 1.1.7
 * Allow clients to check if config is present in integrator.
 
