@@ -1,3 +1,6 @@
+## Version 1.1.9
+* Improve integrator log
+
 ## Version 1.1.8
 * Fix minor bugs
 
