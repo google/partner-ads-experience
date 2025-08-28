@@ -151,6 +151,10 @@ export declare namespace google.ads.integration {
      * The UI customization config for the Ads app.
      */
     uiCustomizationConfig?: google.ads.integration.UiCustomizationConfig;
+    /**
+     * The partner name for the Ads app.
+     */
+    partnerName?: string;
   }
 }
 

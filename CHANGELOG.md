@@ -1,3 +1,6 @@
+## Version 1.1.10
+* Add new field partner name to ClientConfig
+
 ## Version 1.1.9
 * Improve integrator log
 
