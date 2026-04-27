@@ -1,5 +1,13 @@
 # Partner Ads Experience (PAX)
 
+> [!IMPORTANT]
+> Important Update Regarding Third Party Partners
+> * As we constantly evolve our ad offerings to provide the most up-to-date features and reporting, the ability to create a Performance Max campaign via a third-party partner will no longer be available starting in mid-2026. 
+> * While you will no longer be able to create or manage Performance Max campaigns through third-party interfaces, you can continue to access your full account, view performance, and make changes at [ads.google.com](http://ads.google.com). 
+> * Your ad campaigns will continue to reach customers exactly as they do today. There will be no disruption to your current ad delivery or performance.
+> * Managing your ads via ads.google.com provides you with a robust set of tools and real-time features (including access to other campaign types), to help you achieve your business goals.
+
+
 ## Introduction
 
 Partner Ads Experience is a solution for third-party partner websites to integrate with Google Ads Performance Max campaign construction and management experience with low upfront cost and future maintenance burden. In this solution, third-party partner websites can easily call the launching API provided by PAX to download and render Google Ads UI which is built and maintained by Google.
