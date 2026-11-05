@@ -1,0 +1,79 @@
+name: Publish to npm via OSS Exit Gate
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 20
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@c200f3691d83b41bf9bbd8638997a462592937ed
+        with:
+          workload_identity_provider: 'projects/305452601764/locations/global/workloadIdentityPools/builders/providers/github'
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@e427ad8a34f8676edf47cf7d7925499adf3eb74f
+
+      - name: Clean up stale releases from staging repo
+        run: |
+          # clean up stale releases from staging repo
+          packages=$(gcloud artifacts packages list \
+              --project="oss-exit-gate-prod" \
+              --location="us" \
+              --repository="partner-ads-exp--npm" \
+              --format="value(name)" 2>/dev/null)
+
+          echo "${packages}" | xargs -r -I {} sh -c '
+              package_name=$(basename "{}")
+              echo "Deleting package: $package_name..."
+              gcloud artifacts packages delete "{}" \
+                  --project="oss-exit-gate-prod" \
+                  --location="us" \
+                  --repository="partner-ads-exp--npm" \
+                  --quiet
+          '
+
+      - name: Stage google-pax-sdk to OSS Exit Gate
+        run: |
+          cat << 'EOF' > .npmrc
+          registry=https://us-npm.pkg.dev/oss-exit-gate-prod/partner-ads-exp--npm/
+          //us-npm.pkg.dev/oss-exit-gate-prod/partner-ads-exp--npm/:always-auth=true
+          EOF
+          npx --yes google-artifactregistry-auth --repo-config=.npmrc --credential-config="$HOME/.npmrc"
+          VERSION="$(jq -r .version package.json)"
+          npm publish --provenance=false --registry="https://us-npm.pkg.dev/oss-exit-gate-prod/partner-ads-exp--npm/"
+          cat << EOF > manifest.json
+          {
+            "publish_all": false,
+            "publishing_groups": [
+              {
+                "packages": [
+                  {
+                    "name": "google-pax-sdk",
+                    "version": "${VERSION}"
+                  }
+                ]
+              }
+            ]
+          }
+          EOF
+          gcloud storage cp manifest.json \
+            "gs://oss-exit-gate-prod-projects-bucket/partner-ads-exp/npm/manifests/manifest-${{ github.run_id }}-${{ github.run_attempt }}.json"
